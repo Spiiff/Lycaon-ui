@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ProjectlistComponent } from './pages/projectlist/projectlist.component';
-import { ProjecteditComponent } from './pages/projectedit/projectedit.component';
 import { ProjectmodifyComponent } from './pages/projectmodify/projectmodify.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -14,7 +13,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppComponent,
     HomeComponent,
     ProjectlistComponent,
-    ProjecteditComponent,
     ProjectmodifyComponent
   ],
   imports: [
