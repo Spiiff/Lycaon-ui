@@ -19,16 +19,21 @@ export class ProjectlistComponent implements OnInit {
 
   }
 
-  gotoProjectModify() {
+  gotoProjectModify(id: number) {
     this.router.navigateByUrl("project-modify")
   }
 
-  gotoProjectRead() {
-    this.router.navigateByUrl("project-read")
+  gotoProjectRead(id:number) {
+    //this.router.navigateByUrl('project-read'+"/"+id)
+    this.router.navigateByUrl(`project-read/${id}`)
   }
 
   gotoProjectDelete() {
     this.router.navigateByUrl("project-delete")
+  }
+
+  gotoProjectCreate() {
+    this.router.navigateByUrl("project-create")
   }
 
   ngOnInit() {

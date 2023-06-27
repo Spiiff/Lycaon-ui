@@ -8,14 +8,18 @@ import { ProjectlistComponent } from './pages/projectlist/projectlist.component'
 import { ProjectmodifyComponent } from './pages/projectmodify/projectmodify.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './pages/navbar/navbar.component';
+import { ProjectreadComponent } from './pages/projectread/projectread.component';
+import {ProjectcreateComponent} from "./pages/projectcreate/projectcreate.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    NavbarComponent,
     ProjectlistComponent,
     ProjectmodifyComponent,
-    NavbarComponent
+    ProjectcreateComponent,
+    ProjectreadComponent
   ],
   imports: [
     AppRoutingModule,

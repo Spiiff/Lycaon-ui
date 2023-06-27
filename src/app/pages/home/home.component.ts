@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {Router} from "@angular/router";
 
 @Component({
@@ -8,12 +8,8 @@ import {Router} from "@angular/router";
 })
 export class HomeComponent {
   title = 'Lycaon';
+
   constructor(private router: Router) {
 
   }
-  /*
-  gotoProjectList(){
-    this.router.navigateByUrl("project-list")
-  }
-   */
 }

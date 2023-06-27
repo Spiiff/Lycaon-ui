@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-projectmodify',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./projectmodify.component.css']
 })
 export class ProjectmodifyComponent {
+
+  constructor(private router: Router) {
+
+  }
 
 }
