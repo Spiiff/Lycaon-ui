@@ -11,7 +11,9 @@ export class HomeComponent {
   constructor(private router: Router) {
 
   }
+  /*
   gotoProjectList(){
     this.router.navigateByUrl("project-list")
   }
+   */
 }

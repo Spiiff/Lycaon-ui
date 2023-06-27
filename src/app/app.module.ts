@@ -7,13 +7,15 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProjectlistComponent } from './pages/projectlist/projectlist.component';
 import { ProjectmodifyComponent } from './pages/projectmodify/projectmodify.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NavbarComponent } from './pages/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ProjectlistComponent,
-    ProjectmodifyComponent
+    ProjectmodifyComponent,
+    NavbarComponent
   ],
   imports: [
     AppRoutingModule,

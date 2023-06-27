@@ -1,10 +1,18 @@
 <div>
-  <div class="container">
+  <app-navbar></app-navbar>
+  <div class="container1">
+    <p class="col-1" >Project List</p>
     <input type="text" placeholder="Search Project" #filter>
-    <button class="primary" type="button" (click)="(filter.value)">Search</button>
+    <button class="col-1 primary" type="button" (click)="(filter.value)">Search</button>
   </div>
-  <div>
-    <p>projectlist works!</p>
-    <button (click)="gotoProjectModify()">Modify</button>
+  <div class="m-2 border">
+    <div class="d-flex" *ngFor="let project of listaProgetti">
+      <p class="col-9">{{project.name}}</p>
+      <div class="col-3">
+      <button (click)="gotoProjectModify()">Modify</button>
+      <button (click)="gotoProjectRead()">Read</button>
+      <button (click)="gotoProjectDelete()">Delete</button>
+      </div>
+    </div>
   </div>
 </div>
