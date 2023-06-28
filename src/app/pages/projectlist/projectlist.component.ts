@@ -37,7 +37,9 @@ export class ProjectlistComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.listaProgetti = this.projectService.findAll()
+    this.projectService.findAll().subscribe(res=>{
+      this.listaProgetti=res
+    })
     console.log(this.listaProgetti)
   }
 }

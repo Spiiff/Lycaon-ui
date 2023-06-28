@@ -10,6 +10,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './pages/navbar/navbar.component';
 import { ProjectreadComponent } from './pages/projectread/projectread.component';
 import {ProjectcreateComponent} from "./pages/projectcreate/projectcreate.component";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import {ProjectcreateComponent} from "./pages/projectcreate/projectcreate.compon
   ],
   imports: [
     AppRoutingModule,
+    HttpClientModule,
     BrowserModule,
     NgbModule
   ],

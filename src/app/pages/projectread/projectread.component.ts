@@ -27,7 +27,8 @@ export class ProjectreadComponent implements OnInit {
     // console.log(this.activateRoute.snapshot.params['id'])
     const id = this.activateRoute.snapshot.params['id']
     //console.log(this.projectService.findById(id))
-    this.project = this.projectService.findById(id)
+
+    //this.project = this.projectService.findById(id)
 
     // this.activateRoute.paramMap.subscribe((res) => {
     //   //console.log(id)

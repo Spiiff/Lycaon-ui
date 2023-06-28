@@ -1,36 +1,24 @@
 import {Injectable} from '@angular/core';
 import {Project} from "../model/project.model";
-import {elementAt} from "rxjs";
+import {elementAt, Observable} from "rxjs";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectService {
 
-  mockList: Project[] = [{
-    id: 1,
-    name: "Project 1",
-    description: "uno"
-  },
-    {
-      id: 2,
-      name: "Project 2",
-      description: "due"
-    },
-    {
-      id: 3,
-      name: "Project 3",
-      description: "tre"
-    }]
-
-  constructor() {
+  constructor(private httpClient: HttpClient) {
   }
 
-  public findAll(): Project[] {
-    return this.mockList;
+  public findAll(): Observable<Project[]> {
+    return this.httpClient.get<Project[]>(`http://localhost:3000/projects`);
   }
 
+  /*
   public findById(id: number) {
     return this.mockList.find(element=>element.id==id);
   }
+
+   */
 }

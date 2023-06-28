@@ -6,12 +6,12 @@
     </div>
     <div>
       <input type="text" placeholder="Search Project" #filter>
-      <button class=" primary" type="button" (click)="(filter.value)">Search</button>
+      <button class="primary" type="button" (click)="(filter.value)">Search</button>
     </div>
   </div>
-  <div class="m-2 border">
-    <div class="d-flex justify-content-between" *ngFor="let project of listaProgetti">
-      <div>{{project.name}}</div>
+  <div class="m-2 border border-secondary bg-secondary-subtle">
+    <div class="d-flex border border-secondary justify-content-between" *ngFor="let project of listaProgetti">
+      <div class="">{{project.name}}</div>
       <div>
         <button (click)="gotoProjectModify(project.id)">Modify</button>
         <button (click)="gotoProjectRead(project.id)">Read</button>
