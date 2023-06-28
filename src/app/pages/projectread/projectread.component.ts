@@ -24,8 +24,13 @@ export class ProjectreadComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // console.log(this.activateRoute.snapshot.params['id'])
+
     const id = this.activateRoute.snapshot.params['id']
+    const name = this.activateRoute.snapshot.params['name']
+    const description = this.activateRoute.snapshot.params['description']
+
+
+    // console.log(this.activateRoute.snapshot.params['id'])
     //console.log(this.projectService.findById(id))
 
     //this.project = this.projectService.findById(id)
