@@ -4,6 +4,7 @@ import {ProjectService} from "../../sevices/project.service";
 import {Project} from "../../model/project.model";
 import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import {PopupalertComponent} from "../popupalert/popupalert.component";
+import {PopupalertsearchComponent} from "../popupalertsearch/popupalertsearch.component";
 
 @Component({
   selector: 'app-projectlist',
@@ -48,5 +49,13 @@ export class ProjectlistComponent implements OnInit {
       data: project,
       disableClose: true
     })
+  }
+
+  filterResult(value: string) {
+    this.dialog.open(PopupalertsearchComponent,{
+      width: '250px',
+      disableClose: true
+    })
+
   }
 }

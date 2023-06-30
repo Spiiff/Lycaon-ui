@@ -23,7 +23,7 @@ export class ProjectService {
     return this.httpClient.post<Project>(`http://localhost:3000/projects`, {name: name, description: description});
   }
 
-  public deleteProject(id: number): Observable<Project> {
+  public deleteProject(id:number): Observable<Project> {
     return this.httpClient.delete<Project>(`http://localhost:3000/projects/${id}`);
   }
 

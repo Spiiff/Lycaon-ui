@@ -15,6 +15,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { PopupalertComponent } from './pages/popupalert/popupalert.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialog, MatDialogModule} from "@angular/material/dialog";
+import { PopupalertsearchComponent } from './pages/popupalertsearch/popupalertsearch.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {MatDialog, MatDialogModule} from "@angular/material/dialog";
     ProjectmodifyComponent,
     ProjectcreateComponent,
     ProjectreadComponent,
-    PopupalertComponent
+    PopupalertComponent,
+    PopupalertsearchComponent
   ],
   imports: [
     AppRoutingModule,

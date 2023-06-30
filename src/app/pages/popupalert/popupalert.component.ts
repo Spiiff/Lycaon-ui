@@ -9,7 +9,7 @@ import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
   templateUrl: './popupalert.component.html',
   styleUrls: ['./popupalert.component.css']
 })
-export class PopupalertComponent {
+export class PopupalertComponent{
   project: Project | undefined = undefined
 
   constructor(
@@ -27,9 +27,9 @@ export class PopupalertComponent {
   }
 
   del() {
+    this.projectService.deleteProject(this.project!.id).subscribe(res=>{console.log(res)})
     console.log(this)
-    const id = this.activateRoute.snapshot.params['id']  //takes the id from route
-    this.projectService.deleteProject(id).subscribe(res => console.log(res))
-    this.router.navigateByUrl("project-list")
+    this.dialogRef.close()
+    window.location.reload()
   }
 }

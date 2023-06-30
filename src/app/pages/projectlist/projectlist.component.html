@@ -1,12 +1,20 @@
 <div>
   <app-navbar></app-navbar>
-  <div class="d-flex justify-content-between">
-    <div>
+  <div class="d-flex">
+    <div class="col-1">
       <p>PROJECT LIST</p>
     </div>
-    <div>
-      <input type="text" placeholder="Search Project" #filter>
-      <button class="primary" type="button" (click)="(filter.value)">Search</button>
+    <div class="d-flex input-group justify-content-end form-outline">
+      <div class="d-flex">
+        <input type="search" placeholder="Search Project" id="form1" class="form-control" #filter>
+        <label class="form-label" for="form1"></label>
+      </div>
+      <button type="button" class="btn" (click)="filterResult(filter.value)">Search
+      </button>
+      <!-- <div>
+        <input type="text" placeholder="Search Project" #filter>
+        <button class="primary" type="button" (click)="(filter.value)">Search</button>
+      </div> -->
     </div>
   </div>
   <div class="m-2 border border-secondary bg-secondary-subtle">
