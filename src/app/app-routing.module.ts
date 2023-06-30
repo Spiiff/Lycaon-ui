@@ -20,7 +20,7 @@ const routes: Routes = [
     component: ProjectreadComponent
   },
   {
-    path: 'project-modify',
+    path: 'project-modify/:id',
     component: ProjectmodifyComponent
   },
   {

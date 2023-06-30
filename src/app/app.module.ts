@@ -11,6 +11,10 @@ import { NavbarComponent } from './pages/navbar/navbar.component';
 import { ProjectreadComponent } from './pages/projectread/projectread.component';
 import {ProjectcreateComponent} from "./pages/projectcreate/projectcreate.component";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {ReactiveFormsModule} from "@angular/forms";
+import { PopupalertComponent } from './pages/popupalert/popupalert.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDialog, MatDialogModule} from "@angular/material/dialog";
 
 @NgModule({
   declarations: [
@@ -20,13 +24,17 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
     ProjectlistComponent,
     ProjectmodifyComponent,
     ProjectcreateComponent,
-    ProjectreadComponent
+    ProjectreadComponent,
+    PopupalertComponent
   ],
   imports: [
     AppRoutingModule,
     HttpClientModule,
     BrowserModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

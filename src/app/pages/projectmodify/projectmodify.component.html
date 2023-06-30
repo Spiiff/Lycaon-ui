@@ -1,21 +1,23 @@
-<div>
-  <app-navbar></app-navbar>
+<app-navbar></app-navbar>
+<div [formGroup]="form">
   <div>
     <h5>Project Name</h5>
     <div class="m-2 card">
-      <div class="card-body"> {{project?.name}}
+      <div class="card-body">
+        <input id="nameform" placeholder="{{project?.name}}" type="text" [formControlName]="'name'">
       </div>
     </div>
   </div>
   <div>
     <h5>Project description</h5>
     <div class="m-2 card">
-      <div class="card-body"> {{project?.description}}
+      <div class="card-body">
+        <input id="descriptionform" placeholder="{{project?.description}}" type="text"  [formControlName]="'description'">
       </div>
     </div>
   </div>
-  <div class="d-flex justify-content-end">
-    <button (click)="gotoProjectList()">Save</button>
-    <button (click)="gotoProjectList()">Cancel</button>
-  </div>
+</div>
+<div class="d-flex justify-content-end">
+  <button (click)="save()">Save</button>
+  <button (click)="gotoProjectList()">Cancel</button>
 </div>

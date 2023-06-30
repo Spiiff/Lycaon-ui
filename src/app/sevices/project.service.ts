@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Project} from "../model/project.model";
-import {elementAt, Observable} from "rxjs";
+import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 
 @Injectable({
@@ -15,10 +15,24 @@ export class ProjectService {
     return this.httpClient.get<Project[]>(`http://localhost:3000/projects`);
   }
 
-  /*
-  public findById(id: number) {
-    return this.mockList.find(element=>element.id==id);
+  public findById(id: number): Observable<Project> {
+    return this.httpClient.get<Project>(`http://localhost:3000/projects/${id}`);
   }
 
-   */
+  public createProject(name: string | null, description: string | null): Observable<Project> {
+    return this.httpClient.post<Project>(`http://localhost:3000/projects`, {name: name, description: description});
+  }
+
+  public deleteProject(id: number): Observable<Project> {
+    return this.httpClient.delete<Project>(`http://localhost:3000/projects/${id}`);
+  }
+
+  public rewriteProject(id: number, name: string | null, description: string | null): Observable<Project> {
+    return this.httpClient.put<Project>(`http://localhost:3000/projects/${id}`, {
+      id: id,
+      name: name,
+      description: description
+    });
+  }
+
 }

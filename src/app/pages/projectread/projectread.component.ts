@@ -14,31 +14,26 @@ export class ProjectreadComponent implements OnInit {
   constructor(
     private router: Router,
     private activateRoute: ActivatedRoute,
-    private projectService: ProjectService
+    public projectService: ProjectService
   ) {
-
   }
 
   gotoProjectList() {
     this.router.navigateByUrl("project-list")
   }
 
-  ngOnInit(): void {
-
-    const id = this.activateRoute.snapshot.params['id']
-    const name = this.activateRoute.snapshot.params['name']
-    const description = this.activateRoute.snapshot.params['description']
-
-
-    // console.log(this.activateRoute.snapshot.params['id'])
-    //console.log(this.projectService.findById(id))
-
-    //this.project = this.projectService.findById(id)
-
-    // this.activateRoute.paramMap.subscribe((res) => {
-    //   //console.log(id)
-    // })
+  gotoModify(id: number) {
+    this.router.navigateByUrl(`project-modify/${id}`)
   }
 
-  protected readonly undefined = undefined;
+  ngOnInit(): void {
+    const id = this.activateRoute.snapshot.params['id']
+    this.projectService.findById(id).subscribe(res => {
+      this.project = res;
+    })
+
+    //this.project = this.projectService.findById(id)
+    //this.activateRoute.paramMap.subscribe((res) => {
+    //console.log(id)
+  }
 }
