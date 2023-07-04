@@ -13,7 +13,9 @@ import {PopupalertsearchComponent} from "../popupalertsearch/popupalertsearch.co
 })
 
 export class ProjectlistComponent implements OnInit {
-  listaProgetti: Project[] = []
+  listaProgettiOriginal: Project[] = []
+  listaProgettiView: Project[] = []
+
 
   constructor(
     private router: Router,
@@ -38,9 +40,9 @@ export class ProjectlistComponent implements OnInit {
 
   ngOnInit() {
     this.projectService.findAll().subscribe(res => {
-      this.listaProgetti = res
+      this.listaProgettiOriginal = res
+      this.listaProgettiView = res
     })
-    console.log(this.listaProgetti)
   }
 
   openDialog(s: string, s2: string, project: Project) {
@@ -52,10 +54,18 @@ export class ProjectlistComponent implements OnInit {
   }
 
   filterResult(value: string) {
-    this.dialog.open(PopupalertsearchComponent,{
+  this.listaProgettiView = this.listaProgettiOriginal.filter(p=>p.name.toLowerCase().includes(value.toLowerCase()))
+
+    /*this.projectService.findByName("pippo").subscribe(res => {
+      console.log(res)
+    })
+     */
+    /*this.dialog.open(PopupalertsearchComponent,{
       width: '250px',
       disableClose: true
     })
+
+     */
 
   }
 }

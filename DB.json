@@ -1,9 +1,9 @@
 {
   "projects": [
     {
+      "id": 1,
       "name": "Project 1",
-      "description": "uno",
-      "id": 1
+      "description": "uno"
     },
     {
       "name": "Project 2",
@@ -79,11 +79,6 @@
       "name": "Prove F1",
       "description": "campionato",
       "id": 16
-    },
-    {
-      "name": "Prove canto",
-      "description": "musica",
-      "id": 17
     }
   ]
 }

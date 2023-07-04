@@ -19,11 +19,16 @@ export class ProjectService {
     return this.httpClient.get<Project>(`http://localhost:3000/projects/${id}`);
   }
 
+  //todo implementare quando ci sarà backend
+  public findByName(name: string): Observable<Project[]> {
+    return this.httpClient.get<Project[]>(`http://localhost:3000/projects`, {params: {name: name}});
+  }
+
   public createProject(name: string | null, description: string | null): Observable<Project> {
     return this.httpClient.post<Project>(`http://localhost:3000/projects`, {name: name, description: description});
   }
 
-  public deleteProject(id:number): Observable<Project> {
+  public deleteProject(id: number): Observable<Project> {
     return this.httpClient.delete<Project>(`http://localhost:3000/projects/${id}`);
   }
 
