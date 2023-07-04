@@ -12,6 +12,6 @@ export class NavbarComponent {
   }
 
   gotoProjectList() {
-    this.router.navigateByUrl("project-list")
+    this.router.navigateByUrl("project-list").then()
   }
 }

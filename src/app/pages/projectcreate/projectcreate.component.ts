@@ -1,8 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {Project} from "../../model/project.model";
 import {ProjectService} from "../../sevices/project.service";
-import {FormBuilder, FormControl} from '@angular/forms';
+import {FormBuilder} from '@angular/forms';
 
 @Component({
   selector: 'app-projectcreate',
@@ -27,11 +27,11 @@ export class ProjectcreateComponent implements OnInit {
   }
 
   gotoProjectList() {
-    this.router.navigateByUrl("project-list")
+    this.router.navigateByUrl("project-list").then()
   }
 
   ngOnInit(): void {
-    const id = this.activateRoute.snapshot.params['id']
+    //const id = this.activateRoute.snapshot.params['id']
     /*this.projectService.findById(id).subscribe(res => {
       this.project = res;
     })
@@ -39,12 +39,11 @@ export class ProjectcreateComponent implements OnInit {
   }
 
   save() {
-    console.log(this.form)
+    //console.log(this.form)
     const name = this.form.get('name')!.value
     const description = this.form.get('description')!.value
     this.projectService.createProject(name, description).subscribe(res => console.log(res))
-    this.router.navigateByUrl("project-list")
+    this.router.navigateByUrl("project-list").then()
   }
 
-  protected readonly undefined = undefined;
 }

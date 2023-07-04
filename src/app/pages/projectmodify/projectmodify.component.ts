@@ -25,7 +25,7 @@ export class ProjectmodifyComponent implements OnInit {
   }
 
   gotoProjectList() {
-    this.router.navigateByUrl("project-list")
+    this.router.navigateByUrl("project-list").then()
   }
 
   ngOnInit(): void {
@@ -42,8 +42,7 @@ export class ProjectmodifyComponent implements OnInit {
     const name = this.form.get('name')!.value
     const description = this.form.get('description')!.value
     this.projectService.rewriteProject(id, name, description).subscribe(res => console.log(res))
-    this.router.navigateByUrl("project-list")
+    this.router.navigateByUrl("project-list").then()
   }
 
-  protected readonly undefined = undefined;
 }

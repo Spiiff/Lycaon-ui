@@ -36,19 +36,14 @@
       "id": 7
     },
     {
-      "name": "Cascata di Lava",
-      "description": "vesuvio",
-      "id": 8
+      "id": 8,
+      "name": "Cascata Niagara",
+      "description": "acqua"
     },
     {
       "id": 9,
       "name": "Film Marvel",
       "description": "iron-man"
-    },
-    {
-      "name": "Corso nuoto",
-      "description": "stile",
-      "id": 10
     },
     {
       "id": 11,

@@ -19,11 +19,12 @@ export class ProjectreadComponent implements OnInit {
   }
 
   gotoProjectList() {
-    this.router.navigateByUrl("project-list")
+    this.router.navigateByUrl("project-list").then()
   }
 
+  //todo aggiungere bottone vai a modifica progetto
   gotoModify(id: number) {
-    this.router.navigateByUrl(`project-modify/${id}`)
+    this.router.navigateByUrl(`project-modify/${id}`).then()
   }
 
   ngOnInit(): void {

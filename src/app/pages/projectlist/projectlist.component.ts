@@ -2,9 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {ProjectService} from "../../sevices/project.service";
 import {Project} from "../../model/project.model";
-import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+import {MatDialog} from '@angular/material/dialog';
 import {PopupalertComponent} from "../popupalert/popupalert.component";
-import {PopupalertsearchComponent} from "../popupalertsearch/popupalertsearch.component";
 
 @Component({
   selector: 'app-projectlist',
@@ -26,16 +25,16 @@ export class ProjectlistComponent implements OnInit {
   }
 
   gotoProjectModify(id: number) {
-    this.router.navigateByUrl(`project-modify/${id}`)  //mi compila i campi trovando una "route"
+    this.router.navigateByUrl(`project-modify/${id}`).then()  //mi compila i campi trovando una "route"
   }
 
   gotoProjectRead(id: number) {
     //this.router.navigateByUrl('project-read'+"/"+id)
-    this.router.navigateByUrl(`project-read/${id}`)
+    this.router.navigateByUrl(`project-read/${id}`).then()
   }
 
   gotoProjectCreate() {
-    this.router.navigateByUrl("project-create")
+    this.router.navigateByUrl("project-create").then()
   }
 
   ngOnInit() {

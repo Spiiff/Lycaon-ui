@@ -10,11 +10,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './pages/navbar/navbar.component';
 import { ProjectreadComponent } from './pages/projectread/projectread.component';
 import {ProjectcreateComponent} from "./pages/projectcreate/projectcreate.component";
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {HttpClientModule} from "@angular/common/http";
 import {ReactiveFormsModule} from "@angular/forms";
 import { PopupalertComponent } from './pages/popupalert/popupalert.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatDialog, MatDialogModule} from "@angular/material/dialog";
+import {MatDialogModule} from "@angular/material/dialog";
 import { PopupalertsearchComponent } from './pages/popupalertsearch/popupalertsearch.component';
 
 @NgModule({
