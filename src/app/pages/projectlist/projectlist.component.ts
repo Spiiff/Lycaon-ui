@@ -29,7 +29,6 @@ export class ProjectlistComponent implements OnInit {
   }
 
   gotoProjectRead(id: number) {
-    //this.router.navigateByUrl('project-read'+"/"+id)
     this.router.navigateByUrl(`project-read/${id}`).then()
   }
 
@@ -53,18 +52,18 @@ export class ProjectlistComponent implements OnInit {
   }
 
   filterResult(value: string) {
-  this.listaProgettiView = this.listaProgettiOriginal.filter(p=>p.name.toLowerCase().includes(value.toLowerCase()))
+    this.listaProgettiView = this.listaProgettiOriginal.filter(p => p.name.toLowerCase().includes(value.toLowerCase()))
 
     /*this.projectService.findByName("pippo").subscribe(res => {
       console.log(res)
     })
-     */
+    */
+
     /*this.dialog.open(PopupalertsearchComponent,{
       width: '250px',
       disableClose: true
     })
-
-     */
+    */
 
   }
 }

@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Project} from "../model/project.model";
+import {Project, Work} from "../model/project.model";
 import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 
@@ -13,6 +13,10 @@ export class ProjectService {
 
   public findAll(): Observable<Project[]> {
     return this.httpClient.get<Project[]>(`http://localhost:3000/projects`);
+  }
+
+  public findWorksById(id:number): Observable<Work>{
+    return this.httpClient.get<Work>(`http://localhost:3000/works/${id}`)
   }
 
   public findById(id: number): Observable<Project> {

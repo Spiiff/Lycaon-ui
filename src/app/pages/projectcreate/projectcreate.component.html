@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
+<app-navbar xmlns="http://www.w3.org/1999/html"></app-navbar>
 <div [formGroup]="form">
   <div>
     <h5>Project Name</h5>
@@ -12,7 +12,7 @@
     <h5>Project description</h5>
     <div class="m-2 card">
       <div class="card-body">
-        <input id="descriptionform" placeholder="Insert Description" type="text" [formControlName]="'description'">
+        <textarea id="descriptionform" placeholder="Insert Description" type="text" [formControlName]="'description'"></textarea>
       </div>
     </div>
   </div>

@@ -16,9 +16,9 @@
       "id": 3
     },
     {
+      "id": 4,
       "name": "Senza nome",
-      "description": "nome",
-      "id": 4
+      "description": "nome"
     },
     {
       "name": "Cascata Marmore",
@@ -74,6 +74,24 @@
       "name": "Prove F1",
       "description": "campionato",
       "id": 16
+    }
+  ],
+  "works": [
+    {
+      "projectId": 1,
+      "name": "Project 1 - work1",
+      "data": "09/10/2001",
+      "hours": 6,
+      "user": "Homer",
+      "description": "work-uno"
+    },
+    {
+      "projectId": 1,
+      "name": "Project 1 - work2",
+      "data": "18/11/2002",
+      "hours": 8,
+      "user": "Bart",
+      "description": "work-two"
     }
   ]
 }
