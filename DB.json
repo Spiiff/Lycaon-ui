@@ -78,6 +78,7 @@
   ],
   "works": [
     {
+      "id": 1,
       "projectId": 1,
       "name": "Project 1 - work1",
       "data": "09/10/2001",
@@ -86,12 +87,31 @@
       "description": "work-uno"
     },
     {
+      "id": 2,
       "projectId": 1,
       "name": "Project 1 - work2",
       "data": "18/11/2002",
       "hours": 8,
       "user": "Bart",
       "description": "work-two"
+    },
+    {
+      "id": 3,
+      "projectId": 2,
+      "name": "Project 2 - work1",
+      "data": "18/11/2002",
+      "hours": 8,
+      "user": "Bart",
+      "description": "work-uno"
+    },
+    {
+      "id": 4,
+      "projectId": 3,
+      "name": "Project 3 - work1",
+      "data": "18/11/2002",
+      "hours": 8,
+      "user": "Bart",
+      "description": "work-uno"
     }
   ]
 }

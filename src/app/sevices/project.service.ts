@@ -15,8 +15,8 @@ export class ProjectService {
     return this.httpClient.get<Project[]>(`http://localhost:3000/projects`);
   }
 
-  public findWorksById(id:number): Observable<Work>{
-    return this.httpClient.get<Work>(`http://localhost:3000/works/${id}`)
+  public findWorksByProjectId(projectId: string): Observable<Work[]>{
+    return this.httpClient.get<Work[]>(`http://localhost:3000/works?projectId=${projectId}`)
   }
 
   public findById(id: number): Observable<Project> {

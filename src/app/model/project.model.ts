@@ -4,7 +4,8 @@ export type Project = {
   description: string;
 }
 export type Work = {
-  id: number;
+  projectId: number;
+  name:string;
   data: string;
   hours: number;
   user: string;
