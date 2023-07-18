@@ -1,9 +1,9 @@
 {
   "projects": [
     {
-      "id": 1,
       "name": "Project 1",
-      "description": "uno"
+      "description": "uno",
+      "id": 1
     },
     {
       "name": "Project 2",
@@ -19,11 +19,6 @@
       "id": 4,
       "name": "Senza nome",
       "description": "nome"
-    },
-    {
-      "name": "Cascata Marmore",
-      "description": "marmore",
-      "id": 5
     },
     {
       "id": 6,
@@ -81,8 +76,8 @@
       "id": 1,
       "projectId": 1,
       "name": "Project 1 - work1",
-      "data": "09/10/2001",
-      "hours": 6,
+      "data": "18/11/2002",
+      "hours": 8,
       "user": "Homer",
       "description": "work-uno"
     },
@@ -92,8 +87,8 @@
       "name": "Project 1 - work2",
       "data": "18/11/2002",
       "hours": 8,
-      "user": "Bart",
-      "description": "work-two"
+      "user": "Homer",
+      "description": "work-due"
     },
     {
       "id": 3,

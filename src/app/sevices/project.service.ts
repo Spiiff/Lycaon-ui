@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Project, Work} from "../model/project.model";
+import {Project} from "../model/project.model";
 import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 
@@ -15,15 +15,11 @@ export class ProjectService {
     return this.httpClient.get<Project[]>(`http://localhost:3000/projects`);
   }
 
-  public findWorksByProjectId(projectId: string): Observable<Work[]>{
-    return this.httpClient.get<Work[]>(`http://localhost:3000/works?projectId=${projectId}`)
-  }
-
   public findById(id: number): Observable<Project> {
     return this.httpClient.get<Project>(`http://localhost:3000/projects/${id}`);
   }
 
-  //todo implementare quando ci sarà backend
+  //todo implementare quando ci sarà back-end
   public findByName(name: string): Observable<Project[]> {
     return this.httpClient.get<Project[]>(`http://localhost:3000/projects`, {params: {name: name}});
   }
@@ -45,3 +41,4 @@ export class ProjectService {
   }
 
 }
+

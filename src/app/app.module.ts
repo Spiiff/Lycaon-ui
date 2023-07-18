@@ -17,6 +17,15 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {PopupalertsearchComponent} from './pages/popupalertsearch/popupalertsearch.component';
 import {ProjectworklistComponent} from './pages/projectworklist/projectworklist.component';
 import {ProjectworkComponent} from './pages/projectwork/projectwork.component';
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {MatNativeDateModule} from "@angular/material/core";
+import { DatepickerComponent } from './pages/datepicker/datepicker.component';
+import { WorkcreateComponent } from './pages/workcreate/workcreate.component';
+import {MatIconModule} from "@angular/material/icon";
+import { PopupworkdeleteComponent } from './pages/popupworkdelete/popupworkdelete.component';
+import { WorkmodifyComponent } from './pages/workmodify/workmodify.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +39,10 @@ import {ProjectworkComponent} from './pages/projectwork/projectwork.component';
     PopupalertComponent,
     PopupalertsearchComponent,
     ProjectworklistComponent,
-    ProjectworkComponent
+    ProjectworkComponent,
+    WorkcreateComponent,
+    PopupworkdeleteComponent,
+    WorkmodifyComponent
   ],
   imports: [
     AppRoutingModule,
@@ -39,7 +51,13 @@ import {ProjectworkComponent} from './pages/projectwork/projectwork.component';
     NgbModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatNativeDateModule,
+    DatepickerComponent,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

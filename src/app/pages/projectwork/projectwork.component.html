@@ -4,20 +4,42 @@
     <thead>
     <tr>
       <th scope="col">Name</th>
-      <th scope="col">Data</th>
-      <th scope="col">Hours</th>
       <th scope="col">User</th>
-      <th scope="col">Description</th>
+      <th scope="col">Hours</th>
+      <th scope="col">Date</th>
+      <th scope="col">Modify&Delete</th>
     </tr>
     </thead>
-    <tbody>
+    <tbody class="align-middle">
     <tr *ngFor="let work of listaWork">
       <td>{{work.name}}</td>
-      <td>{{work.data}}</td>
-      <td>{{work.hours}}</td>
       <td>{{work.user}}</td>
-      <td>{{work.description}}</td>
+      <td>
+        <div class="d-flex align-items-center form-group">
+          <label for="exampleFormControlSelect1"></label>
+          <select class="form-control form-control-sm" id="exampleFormControlSelect1">
+            <option *ngFor="let  hour of hours">{{hour}}</option>
+          </select><span>/24</span>
+        </div>
+      </td>
+      <td>
+        <app-datepicker></app-datepicker>
+      </td>
+      <td>
+        <div>
+          <button (click)="gotomodifyWork(work.id)" class="button text-white" style="background-color: #008060">
+            <mat-icon class="align-middle">menu</mat-icon>
+          </button>
+          <p></p>  <!-- spazio tra i due bottoni -->
+          <button (click)="deleteWork('0ms', '0ms',work)" class="button text-white" style="background-color: #008060">
+            <mat-icon class="align-middle">delete</mat-icon>
+          </button>
+        </div>
+      </td> <!--{{work.description}}-->
     </tr>
     </tbody>
   </table>
+  <div class="d-flex justify-content-center">
+    <button (click)="gotoWorkCreate()" class="text-white" style="background-color: #008060">Create Work</button>
+  </div>
 </div>

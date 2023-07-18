@@ -7,6 +7,9 @@ import {ProjectreadComponent} from "./pages/projectread/projectread.component";
 import {ProjectcreateComponent} from "./pages/projectcreate/projectcreate.component";
 import {ProjectworklistComponent} from "./pages/projectworklist/projectworklist.component";
 import {ProjectworkComponent} from "./pages/projectwork/projectwork.component";
+import {WorkcreateComponent} from "./pages/workcreate/workcreate.component";
+import {WorkmodifyComponent} from "./pages/workmodify/workmodify.component";
+
 
 const routes: Routes = [
   {
@@ -36,6 +39,18 @@ const routes: Routes = [
   {
     path: 'project-work',
     component: ProjectworkComponent
+  },
+  {
+    path: 'project-work/:id',
+    component: ProjectworkComponent
+  },
+  {
+    path: 'work-create/:id',
+    component: WorkcreateComponent
+  },
+  {
+    path: 'work-modify/:id',
+    component: WorkmodifyComponent
   }
 
 ];

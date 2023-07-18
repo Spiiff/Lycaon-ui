@@ -1,0 +1,48 @@
+<app-navbar></app-navbar>
+<div [formGroup]="form">
+  <div>
+    <h5>Work Name</h5>
+    <div class="m-2 card">
+      <div class="card-body">
+        <input id="nameform" placeholder="Insert Name" type="text" [formControlName]="'name'">
+      </div>
+    </div>
+  </div>
+  <div>
+    <h5>User</h5>
+    <div class="m-2 card">
+      <div class="card-body">
+        <input id="userform" placeholder="Insert User" type="text" [formControlName]="'user'">
+      </div>
+    </div>
+  </div>
+  <div>
+    <h5>Hours</h5>
+    <div class="m-2 card">
+      <div class="card-body">
+        <!-- <input id="hoursform" placeholder="Insert Hours" type="text" [formControlName]="'hours'"> -->
+        <app-datepicker></app-datepicker>
+      </div>
+    </div>
+  </div>
+  <div>
+    <h5>Hours</h5>
+    <div class="m-2 card">
+      <div class="card-body">
+        <label for="inputNumber" class="input-number-label"></label>
+        <span class="input-number">
+    <input type="number" data-bs-input id="inputNumber" name="inputNumber" placeholder="0" min="0" max="24" step="any" [formControlName]="'hours'"/>
+    </span>
+      </div>
+    </div>
+  </div>
+  <div>
+    <h5>Work description</h5>
+    <div class="m-2 card">
+      <div class="card-body">
+        <textarea id="descriptionform" placeholder="Insert Description" type="text"
+                  [formControlName]="'description'"></textarea>
+      </div>
+    </div>
+  </div>
+</div>
