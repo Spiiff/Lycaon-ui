@@ -1,9 +1,9 @@
 {
   "projects": [
     {
+      "id": 1,
       "name": "Project 1",
-      "description": "uno",
-      "id": 1
+      "description": "uno5"
     },
     {
       "name": "Project 2",
@@ -73,13 +73,13 @@
   ],
   "works": [
     {
-      "id": 1,
       "projectId": 1,
       "name": "Project 1 - work1",
-      "data": "18/11/2002",
-      "hours": 8,
       "user": "Homer",
-      "description": "work-uno"
+      "hours": 2,
+      "data": "11/10/2012",
+      "description": "work-uno",
+      "id": 1
     },
     {
       "id": 2,
@@ -107,6 +107,24 @@
       "hours": 8,
       "user": "Bart",
       "description": "work-uno"
+    },
+    {
+      "projectId": "1",
+      "id": 5,
+      "name": "Prova24",
+      "user": "Andrea",
+      "hours": 2,
+      "data": "",
+      "description": "prova"
+    },
+    {
+      "projectId": "4",
+      "id": 6,
+      "name": "ASD",
+      "user": "pippo",
+      "hours": 6,
+      "data": "",
+      "description": "asder"
     }
   ]
 }

@@ -16,7 +16,7 @@ export class WorkcreateComponent implements OnInit {
   form = this.fb.group({
     name: [""],
     data: [""],
-    hours: [""],
+    hours: 0,
     user: [""],
     description: [""],
   })
@@ -35,6 +35,7 @@ export class WorkcreateComponent implements OnInit {
       this.listWorksView = res
     })
     this.activateRoute.params.subscribe(res => this.work.projectId = res['id'])
+    //console.log("pippo")
   }
 
   gotoWorkFolder() {
@@ -44,6 +45,7 @@ export class WorkcreateComponent implements OnInit {
 
   save() {
     const projectId = this.work?.projectId;
+    parseInt("projectId", 10)
     //console.log(projectId)
     const name = this.form.get('name')!.value;
     const data = this.form.get('data')!.value;

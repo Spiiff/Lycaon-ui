@@ -1,5 +1,6 @@
 <app-navbar></app-navbar>
 <div>
+  <p></p>
   <table class="table table-striped w-100">
     <thead>
     <tr>
@@ -16,14 +17,15 @@
       <td>{{work.user}}</td>
       <td>
         <div class="d-flex align-items-center form-group">
-          <label for="exampleFormControlSelect1"></label>
+          <!-- <label for="exampleFormControlSelect1"></label>
           <select class="form-control form-control-sm" id="exampleFormControlSelect1">
             <option *ngFor="let  hour of hours">{{hour}}</option>
-          </select><span>/24</span>
+          </select> -->
+          <span>{{work.hours}}/24</span>
         </div>
       </td>
       <td>
-        <app-datepicker></app-datepicker>
+        {{work.data}}
       </td>
       <td>
         <div>

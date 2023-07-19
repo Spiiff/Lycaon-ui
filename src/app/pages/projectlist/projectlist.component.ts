@@ -15,7 +15,6 @@ export class ProjectlistComponent implements OnInit {
   listaProgettiOriginal: Project[] = []
   listaProgettiView: Project[] = []
 
-
   constructor(
     private router: Router,
     private projectService: ProjectService,

@@ -4,7 +4,7 @@
     <h5>Work Name</h5>
     <div class="m-2 card">
       <div class="card-body">
-        <input id="nameform" placeholder="Insert Name" type="text" [formControlName]="'name'">
+        <input id="nameform" placeholder="{{work.name}}" type="text" [formControlName]="'name'">
       </div>
     </div>
   </div>
@@ -12,16 +12,16 @@
     <h5>User</h5>
     <div class="m-2 card">
       <div class="card-body">
-        <input id="userform" placeholder="Insert User" type="text" [formControlName]="'user'">
+        <input id="userform" placeholder="{{work.user}}" type="text" [formControlName]="'user'">
       </div>
     </div>
   </div>
   <div>
-    <h5>Hours</h5>
+    <h5>Date</h5>
     <div class="m-2 card">
       <div class="card-body">
-        <!-- <input id="hoursform" placeholder="Insert Hours" type="text" [formControlName]="'hours'"> -->
-        <app-datepicker></app-datepicker>
+        <!-- <input  id="dataform" placeholder="{{work.data}}" type="text" [formControlName]="'data'">  -->
+        <app-datepicker id="dataform" [formControlName]="'data'"></app-datepicker>
       </div>
     </div>
   </div>
@@ -31,7 +31,8 @@
       <div class="card-body">
         <label for="inputNumber" class="input-number-label"></label>
         <span class="input-number">
-    <input type="number" data-bs-input id="inputNumber" name="inputNumber" placeholder="0" min="0" max="24" step="any" [formControlName]="'hours'"/>
+    <input type="number" data-bs-input id="inputNumber" name="inputNumber" placeholder="0" min="0" max="24" step="any"
+           [formControlName]="'hours'"/>
     </span>
       </div>
     </div>
@@ -45,4 +46,8 @@
       </div>
     </div>
   </div>
+</div>
+<div class="d-flex justify-content-end">
+  <button class="button text-white" style="background-color: #008060" (click)="savework()">Save</button>
+  <button class="button text-white" style="background-color: #008060" (click)="gotoWorkList()">Cancel</button>
 </div>

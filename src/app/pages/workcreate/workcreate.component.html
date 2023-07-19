@@ -22,8 +22,17 @@
       <div class="card-body">
         <label for="inputNumber" class="input-number-label"></label>
         <span class="input-number">
-    <input type="number" data-bs-input id="inputNumber" name="inputNumber" placeholder="0" min="0" max="24" step="any" [formControlName]="'hours'"/>
+    <input type="number" data-bs-input id="inputNumber" name="inputNumber" placeholder="0" min="0" max="24" step="any"
+           [formControlName]="'hours'"/>
     </span>
+      </div>
+    </div>
+  </div>
+  <div>
+    <h5>Data</h5>
+    <div class="m-2 card">
+      <div class="card-body">
+        <app-datepicker [formControlName]="'data'"></app-datepicker>
       </div>
     </div>
   </div>

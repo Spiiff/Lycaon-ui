@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {Project, Work} from "../../model/project.model";
+import {Work} from "../../model/project.model";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ProjectService} from "../../sevices/project.service";
 import {WorksService} from "../../sevices/works.service";
-import {PopupalertComponent} from "../popupalert/popupalert.component";
 import {MatDialog} from "@angular/material/dialog";
 import {PopupworkdeleteComponent} from "../popupworkdelete/popupworkdelete.component";
+import {FormBuilder} from "@angular/forms";
 
 @Component({
   selector: 'app-projectwork',
@@ -14,7 +14,11 @@ import {PopupworkdeleteComponent} from "../popupworkdelete/popupworkdelete.compo
 })
 export class ProjectworkComponent implements OnInit {
   listaWork: Work[] = []
-  projectId = "0"  //todo ecco errore probabile
+  projectId = "1" //todo ecco errore probabile prima era "1"
+
+  form = this.fb.group({
+    data: [""]
+  })
 
   hours = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
 
@@ -22,6 +26,7 @@ export class ProjectworkComponent implements OnInit {
   constructor(
     private router: Router,
     private dialog: MatDialog,
+    private fb: FormBuilder,
     private activatedRoute: ActivatedRoute,
     private projectService: ProjectService,
     private workService: WorksService
@@ -30,7 +35,7 @@ export class ProjectworkComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.projectId = this.activatedRoute.snapshot.queryParams["projectId"]
+    this.projectId = this.activatedRoute.snapshot.queryParams['projectId'];
     this.workService.findWorksByProjectId(this.projectId).subscribe(res => {
       this.listaWork = res
     })
