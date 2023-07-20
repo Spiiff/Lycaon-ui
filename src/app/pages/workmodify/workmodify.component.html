@@ -21,7 +21,7 @@
     <div class="m-2 card">
       <div class="card-body">
         <!-- <input  id="dataform" placeholder="{{work.data}}" type="text" [formControlName]="'data'"> -->
-        <app-datepicker id="dataform" [formControlName]="'data'"></app-datepicker>
+        <app-datepicker id="dataform" [parentFormControl]="form.controls['data']"></app-datepicker>
       </div>
     </div>
   </div>

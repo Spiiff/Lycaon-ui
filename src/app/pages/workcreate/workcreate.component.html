@@ -32,7 +32,7 @@
     <h5>Data</h5>
     <div class="m-2 card">
       <div class="card-body">
-        <app-datepicker [formControlName]="'data'"></app-datepicker>
+        <app-datepicker [parentFormControl]="form.controls['data']"></app-datepicker> <!-- [formControlName]="'data'" -->
       </div>
     </div>
   </div>

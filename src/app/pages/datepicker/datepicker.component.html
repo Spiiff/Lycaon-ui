@@ -1,9 +1,8 @@
 <mat-form-field>
   <mat-label>Choose Date</mat-label>
-  <input matInput [matDatepicker]="picker" [(ngModel)]="chooseDate">
+  <input matInput [matDatepicker]="picker" [formControl]="parentFormControl">  <!-- [(ngModel)]="chooseDate" -->
   <mat-hint>MM/DD/YYYY</mat-hint>
   <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
   <mat-datepicker #picker></mat-datepicker>
 </mat-form-field>
-
 <h1>{{chooseDate.toDateString()}}</h1>

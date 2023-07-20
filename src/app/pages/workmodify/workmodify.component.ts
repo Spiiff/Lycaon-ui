@@ -9,6 +9,9 @@ import {WorksService} from "../../sevices/works.service";
   templateUrl: './workmodify.component.html',
   styleUrls: ['./workmodify.component.css']
 })
+
+//@Input()
+
 export class WorkmodifyComponent implements OnInit{
   work: Work = {id: 0, data: "", description: "", hours: 0, name: "", projectId: 0, user: ""}
   form = this.fb.group({
@@ -31,7 +34,7 @@ export class WorkmodifyComponent implements OnInit{
     const id = this.activateRoute.snapshot.params['id']
     this.worksService.findById(id).subscribe(res => {
       this.work = res;
-      this.form.patchValue({name: res.name, description: res.description, user: res.user, hours: res.hours}); //takes new values of name & description
+      this.form.patchValue({name: res.name, description: res.description, data: res.data, user: res.user, hours: res.hours}); //takes new values of name & description
     })
   }
 
@@ -46,6 +49,10 @@ export class WorkmodifyComponent implements OnInit{
     const description = this.form.get('description')!.value;
     this.worksService.rewriteWork(id,projectId, name, data, hours, user, description).subscribe(res => console.log(res));
     this.router.navigateByUrl(`project-work?projectId=${projectId}`).then();
+  }
+
+  get dataFormControl(){
+    return this.form.get('data');
   }
 
   gotoWorkList() {

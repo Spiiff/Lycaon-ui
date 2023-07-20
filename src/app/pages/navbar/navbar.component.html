@@ -1,13 +1,18 @@
 <div class="bg rounded-bottom">
   <nav aria-label="breadcrumb2">
-    <ol class="breadcrumb shadow">
-      <img class="brand-logo" src="/assets/resources/LycaonLogo%20v2.png" alt="logo" width="64" height="64"
-           aria-hidden="true">
-      <li class="breadcrumb-item mt-3"><a href=" " style="color: aliceblue">Home</a></li>
-      <li class="breadcrumb-item mt-3"><span class="text-decoration-underline" style="color: aliceblue"
-                                             (click)="gotoProjectList()">Projects</span></li>
-      <li class="breadcrumb-item mt-3"><span class="text-decoration-underline" style="color: aliceblue"
-                                             (click)="gotoProjectWorkList()">Works</span></li>
-    </ol>
+    <div class="d-flex shadow justify-content-between">
+      <ol class="d-flex breadcrumb ">
+        <img class="brand-logo " src="/assets/resources/LycaonLogo%20v2.png" alt="logo" width="64" height="64"
+             aria-hidden="true">
+        <li class="breadcrumb-item mt-3"><a href=" " style="color: aliceblue">Home</a></li>
+        <li class="breadcrumb-item mt-3"><span class="text-decoration-underline" style="color: aliceblue"
+                                               (click)="gotoProjectList()">Projects</span></li>
+        <li class="breadcrumb-item mt-3"><span class="text-decoration-underline" style="color: aliceblue"
+                                               (click)="gotoProjectWorkList()">Works</span></li>
+      </ol>
+      <div class="d-flex align-items-center">
+        <h1>{{currentDate | date}}</h1>
+      </div>
+    </div>
   </nav>
 </div>

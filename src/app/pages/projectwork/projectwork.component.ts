@@ -56,4 +56,8 @@ export class ProjectworkComponent implements OnInit {
   gotomodifyWork(id: number) {
     this.router.navigateByUrl(`work-modify/${id}`).then()
   }
+
+  getData(work: Work) {
+    return new Date(work.data);
+  }
 }
