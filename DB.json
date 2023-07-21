@@ -74,17 +74,17 @@
   "works": [
     {
       "projectId": 1,
-      "name": "Project 1 - work1",
+      "id": 1,
+      "name": "Bugs",
       "user": "Homer",
       "hours": 2,
-      "data": "11/10/2012",
-      "description": "work-uno",
-      "id": 1
+      "data": "2023-07-01T22:00:00.000Z",
+      "description": "work-uno"
     },
     {
       "projectId": 1,
       "id": 2,
-      "name": "Project 1 - work2",
+      "name": "Testi Divini",
       "user": "Homer",
       "hours": 8,
       "data": "2023-07-19T22:00:00.000Z",

@@ -1,8 +1,7 @@
 <app-navbar></app-navbar>
 <div>
-  <p></p>
+    <h1>Cartella Project: {{project?.name}}</h1>  <!-- todo mostra nome progetto -->
   <table class="table table-striped w-100">
-    <thead>
     <tr>
       <th scope="col">Name</th>
       <th scope="col">User</th>
@@ -10,7 +9,6 @@
       <th scope="col">Date</th>
       <th scope="col">Modify&Delete</th>
     </tr>
-    </thead>
     <tbody class="align-middle">
     <tr *ngFor="let work of listaWork">
       <td>{{work.name}}</td>

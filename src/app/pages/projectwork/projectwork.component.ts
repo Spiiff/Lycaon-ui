@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Work} from "../../model/project.model";
+import {Project, Work} from "../../model/project.model";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ProjectService} from "../../sevices/project.service";
 import {WorksService} from "../../sevices/works.service";
@@ -14,6 +14,7 @@ import {FormBuilder} from "@angular/forms";
 })
 export class ProjectworkComponent implements OnInit {
   listaWork: Work[] = []
+  project: Project | undefined = undefined;
   projectId = "1" //todo ecco errore probabile prima era "1"
 
   form = this.fb.group({
@@ -21,7 +22,6 @@ export class ProjectworkComponent implements OnInit {
   })
 
   hours = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
-
 
   constructor(
     private router: Router,
@@ -31,13 +31,15 @@ export class ProjectworkComponent implements OnInit {
     private projectService: ProjectService,
     private workService: WorksService
   ) {
-
   }
 
   ngOnInit() {
     this.projectId = this.activatedRoute.snapshot.queryParams['projectId'];
     this.workService.findWorksByProjectId(this.projectId).subscribe(res => {
       this.listaWork = res
+    })
+    this.projectService.findById(parseInt(this.projectId)).subscribe(res => {  //find name by id of project
+      this.project = res;
     })
   }
 
