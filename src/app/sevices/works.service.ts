@@ -1,45 +1,40 @@
 import {Injectable} from '@angular/core';
 import {Observable} from "rxjs";
-import {Work} from "../model/project.model";
+import {Work} from "../model/work.model";
 import {HttpClient} from "@angular/common/http";
+import {enviroment} from "../../enviroments/enviroments";
 
 @Injectable({
   providedIn: 'root'
 })
 export class WorksService {
 
+  baseurl = enviroment.api.toString();
+
   constructor(private httpClient: HttpClient) {
   }
 
   public findAll(): Observable<Work[]> {
-    return this.httpClient.get<Work[]>(`http://localhost:3000/works`);
+    return this.httpClient.get<Work[]>(`${this.baseurl}/works`);
   }
 
   public findById(id: number): Observable<Work> {
-    return this.httpClient.get<Work>(`http://localhost:3000/works/${id}`);
+    return this.httpClient.get<Work>(`${this.baseurl}/works/${id}`);
   }
 
   public findWorksByProjectId(projectId: string): Observable<Work[]> {
-    return this.httpClient.get<Work[]>(`http://localhost:3000/works?projectId=${projectId}`)
+    return this.httpClient.get<Work[]>(`${this.baseurl}/works?projectId=${projectId}`)
   }
 
-  public createWork(projectId: number, name: string | null, data: string|null, hours: number| null, user: string|null, description: string | null): Observable<Work> {
-    return this.httpClient.post<Work>(`http://localhost:3000/works`, {projectId: projectId, name: name, data: data, hours: hours, user: user, description: description});
+  public createWork(work: Work): Observable<Work> {
+    return this.httpClient.post<Work>(`${this.baseurl}/works`, work);
   }
 
   public deleteWork(id: number): Observable<Work> {  // id was projectId
-    return this.httpClient.delete<Work>(`http://localhost:3000/works/${id}`);
+    return this.httpClient.delete<Work>(`${this.baseurl}/works/${id}`);
   }
 
-  rewriteWork(id:number, projectId: number | undefined, name: string | null, data: string | null, hours: number | null, user: string | null, description: string | null):Observable<Work> {
-    return this.httpClient.put<Work>(`http://localhost:3000/works/${id}`, {
-      projectId: projectId,
-      id: id,
-      name: name,
-      user: user,
-      hours: hours,
-      data: data,
-      description: description
-    });
+  rewriteWork(work: Work):Observable<Work> {
+    return this.httpClient.put<Work>(`${this.baseurl}/works/${work.id}`,work);
   }
 }

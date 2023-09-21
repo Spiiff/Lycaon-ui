@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {FormBuilder} from "@angular/forms";
-import {Work} from "../../model/project.model";
+import {Work} from "../../model/work.model";
 import {WorksService} from "../../sevices/works.service";
 
 @Component({
@@ -12,10 +12,10 @@ import {WorksService} from "../../sevices/works.service";
 export class WorkcreateComponent implements OnInit {
   listWorksOriginal: Work[] = []
   listWorksView: Work[] = []
-  work: Work = {id: 0, data: "", description: "", hours: 0, name: "", projectId: 0, user: ""}
+  work: Work = {id: 0, date: "", description: "", hours: 0, name: "", projectId: 0, user: ""}
   form = this.fb.group({
     name: [""],
-    data: [""],
+    date: [""],
     hours: 0,
     user: [""],
     description: [""],
@@ -30,10 +30,6 @@ export class WorkcreateComponent implements OnInit {
   }
 
   ngOnInit() {   //use this to add a filtered search like listaprogetti
-    this.worksService.findAll().subscribe(res => {
-      this.listWorksOriginal = res
-      this.listWorksView = res
-    })
     this.activateRoute.params.subscribe(res => this.work.projectId = res['id'])
     //console.log("pippo")
   }
@@ -44,16 +40,14 @@ export class WorkcreateComponent implements OnInit {
   }
 
   save() {
-    const projectId = this.work?.projectId;
-    parseInt("projectId", 10)
-    //console.log(projectId)
-    const name = this.form.get('name')!.value;
-    const data = this.form.get('data')!.value;
-    const hours = this.form.get('hours')!.value;
-    const user = this.form.get('user')!.value;
-    const description = this.form.get('description')!.value;
-    this.worksService.createWork(projectId, name, data, hours, user, description).subscribe(res => console.log(res));
-    this.router.navigateByUrl(`project-work?projectId=${projectId}`).then();
+    this.work.projectId = this.work?.projectId!
+    this.work.name = this.form.get('name')!.value!;
+    this.work.date = this.form.get('date')!.value!;
+    this.work.hours = this.form.get('hours')!.value!;
+    this.work.user = this.form.get('user')!.value!;
+    this.work.description = this.form.get('description')!.value!;
+    this.worksService.createWork(this.work).subscribe(res => console.log(res));
+    this.router.navigateByUrl(`project-work?projectId=${this.work.projectId}`).then();
     //this.router.navigateByUrl('project-work?projectId=' + projectId).then();
   }
 }

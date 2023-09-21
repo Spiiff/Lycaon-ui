@@ -1,0 +1,64 @@
+<!-- <app-navbar></app-navbar> -->
+<div class="bg rounded-bottom">
+  <nav aria-label="breadcrumb2">
+    <div class="d-flex shadow justify-content-between">
+      <ol class="d-flex breadcrumb ">
+        <img class="brand-logo " src="/assets/resources/LycaonLogo%20v2.png" alt="logo" width="64" height="64"
+             aria-hidden="true">
+        <li class="item-barra mx-2 mt-3"><a href=" " style="color: aliceblue">Home</a></li>
+        <h1 class="d-flex align-items-center">|</h1>
+        <li class="item-barra mx-2 mt-3"><span class="text-decoration-underline" style="color: aliceblue"
+                                               (click)="gotoProjectList()">Projects</span></li>
+        <h1 class="d-flex align-items-center">|</h1>
+        <li class="item-barra mx-2 mt-3"><span class="text-decoration-underline" style="color: aliceblue"
+                                               (click)="gotoProjectWorkList()">Works</span></li>
+        <h1 class="d-flex align-items-center">|</h1>
+        <li class="item-barra mx-2 mt-3"><span class="text-decoration-underline" style="color: aliceblue"
+                                               (click)="gotoBoard()">Board</span></li>
+      </ol>
+      <div class="d-flex align-items-center">
+        <h1>{{currentDate | date}}</h1>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<h1>BOARD</h1>
+
+<div class="d-flex justify-content-evenly" cdkDropListGroup>
+  <div class="example-container" style="width: 100%">
+    <h2 class="d-flex justify-content-center rounded" style="background-color: red">TO DO [{{todo.length}}]</h2>
+
+    <div
+      cdkDropList
+      [cdkDropListData]="todo"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+    </div>
+  </div>
+
+  <div class="example-container" style="width: 100%">
+    <h2 class="d-flex justify-content-center rounded" style="background-color: yellow">IN PROGRESS [{{inprogress.length}}]</h2>
+
+    <div
+      cdkDropList
+      [cdkDropListData]="inprogress"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let item of inprogress" cdkDrag>{{item}}</div>
+    </div>
+  </div>
+
+  <div class="example-container" style="width: 100%">
+    <h2 class="d-flex justify-content-center rounded" style="background-color: green">DONE [{{done.length}}]</h2>
+    <div
+      cdkDropList
+      [cdkDropListData]="done"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+    </div>
+  </div>
+</div>
+

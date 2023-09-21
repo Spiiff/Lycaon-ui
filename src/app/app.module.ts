@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -26,6 +26,8 @@ import { WorkcreateComponent } from './pages/workcreate/workcreate.component';
 import {MatIconModule} from "@angular/material/icon";
 import { PopupworkdeleteComponent } from './pages/popupworkdelete/popupworkdelete.component';
 import { WorkmodifyComponent } from './pages/workmodify/workmodify.component';
+import { BoardComponent } from './pages/board/board.component';
+import { DragAndDropModule } from '@progress/kendo-angular-utils';
 
 @NgModule({
   declarations: [
@@ -57,9 +59,13 @@ import { WorkmodifyComponent } from './pages/workmodify/workmodify.component';
     MatInputModule,
     MatNativeDateModule,
     DatepickerComponent,
-    MatIconModule
+    MatIconModule,
+    BoardComponent
   ],
   providers: [],
+  exports: [
+    NavbarComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

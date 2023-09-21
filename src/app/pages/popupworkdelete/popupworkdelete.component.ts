@@ -1,6 +1,6 @@
 import {Component, Inject} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-import {Work} from "../../model/project.model";
+import {Work} from "../../model/work.model";
 import {WorksService} from "../../sevices/works.service";
 
 @Component({
@@ -23,7 +23,7 @@ export class PopupworkdeleteComponent {
   }
 
   delwork() {
-    this.worksService.deleteWork(this.work!.id).subscribe(res=>{console.log(res)})
+    this.worksService.deleteWork(this.work!.id!).subscribe(res=>{console.log(res)})
     console.log(this)
     this.dialogRef.close()
     window.location.reload()

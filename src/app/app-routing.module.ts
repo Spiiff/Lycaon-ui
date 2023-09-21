@@ -9,6 +9,7 @@ import {ProjectworklistComponent} from "./pages/projectworklist/projectworklist.
 import {ProjectworkComponent} from "./pages/projectwork/projectwork.component";
 import {WorkcreateComponent} from "./pages/workcreate/workcreate.component";
 import {WorkmodifyComponent} from "./pages/workmodify/workmodify.component";
+import {BoardComponent} from "./pages/board/board.component";
 
 
 const routes: Routes = [
@@ -51,6 +52,10 @@ const routes: Routes = [
   {
     path: 'work-modify/:id',
     component: WorkmodifyComponent
+  },
+  {
+    path: 'board',
+    component: BoardComponent
   }
 
 ];

@@ -4,11 +4,16 @@
       <ol class="d-flex breadcrumb ">
         <img class="brand-logo " src="/assets/resources/LycaonLogo%20v2.png" alt="logo" width="64" height="64"
              aria-hidden="true">
-        <li class="breadcrumb-item mt-3"><a href=" " style="color: aliceblue">Home</a></li>
-        <li class="breadcrumb-item mt-3"><span class="text-decoration-underline" style="color: aliceblue"
+        <li class="item-barra mx-2 mt-3"><a href=" " style="color: aliceblue">Home</a></li>
+        <h1 class="d-flex align-items-center">|</h1>
+        <li class="item-barra mx-2 mt-3"><span class="text-decoration-underline" style="color: aliceblue"
                                                (click)="gotoProjectList()">Projects</span></li>
-        <li class="breadcrumb-item mt-3"><span class="text-decoration-underline" style="color: aliceblue"
+        <h1 class="d-flex align-items-center">|</h1>
+        <li class="item-barra mx-2 mt-3"><span class="text-decoration-underline" style="color: aliceblue"
                                                (click)="gotoProjectWorkList()">Works</span></li>
+        <h1 class="d-flex align-items-center">|</h1>
+        <li class="item-barra mx-2 mt-3"><span class="text-decoration-underline" style="color: aliceblue"
+                                               (click)="gotoBoard()">Board</span></li>
       </ol>
       <div class="d-flex align-items-center">
         <h1>{{currentDate | date}}</h1>

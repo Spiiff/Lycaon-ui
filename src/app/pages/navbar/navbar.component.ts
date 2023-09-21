@@ -4,7 +4,7 @@ import {Router} from "@angular/router";
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent {
   currentDate: Date = new Date();
@@ -22,4 +22,7 @@ export class NavbarComponent {
     this.router.navigateByUrl("project-worklist").then()
   }
 
+  gotoBoard(){
+    this.router.navigateByUrl("board")
+  }
 }

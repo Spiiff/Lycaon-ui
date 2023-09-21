@@ -65,7 +65,8 @@
               "browserTarget": "Lycaon:build:production"
             },
             "development": {
-              "browserTarget": "Lycaon:build:development"
+              "browserTarget": "Lycaon:build:development",
+              "proxyConfig": "./proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

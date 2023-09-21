@@ -1,11 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import {Project, Work} from "../../model/project.model";
+import {Project} from "../../model/project.model";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ProjectService} from "../../sevices/project.service";
 import {WorksService} from "../../sevices/works.service";
 import {MatDialog} from "@angular/material/dialog";
 import {PopupworkdeleteComponent} from "../popupworkdelete/popupworkdelete.component";
 import {FormBuilder} from "@angular/forms";
+import {Work} from "../../model/work.model";
 
 @Component({
   selector: 'app-projectwork',
@@ -55,11 +56,8 @@ export class ProjectworkComponent implements OnInit {
     })
   }
 
-  gotomodifyWork(id: number) {
+  gotomodifyWork(id: number| undefined) {
     this.router.navigateByUrl(`work-modify/${id}`).then()
   }
 
-  getData(work: Work) {
-    return new Date(work.data);
-  }
 }
